@@ -23,7 +23,7 @@ function App() {
     formData.append('pdf', file);
 
     try {
-      const res = await axios.post('http://localhost:5050/api/upload-pdf', formData, {
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/upload-pdf`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setExplanation(res.data);
