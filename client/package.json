@@ -10,6 +10,7 @@
     "@tiptap/extension-placeholder": "^2.24.2",
     "@tiptap/react": "^2.24.2",
     "@tiptap/starter-kit": "^2.24.2",
+    "axios": "^1.10.0",
     "dotenv": "^17.0.1",
     "firebase": "^11.10.0",
     "openai": "^5.8.2",
