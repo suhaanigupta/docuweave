@@ -1,0 +1,471 @@
+/* === Base Setup === */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif; /* Changed font for a more modern feel */
+  background: #f5f7fa;
+  color: #111;
+  transition: background 0.5s ease, color 0.5s ease; /* Smoother transitions */
+}
+
+.app-container {
+  padding: 2rem; /* Slightly more padding */
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #e0eafc, #cfdef3); /* Softer, more modern light gradient */
+  color: #1a202c; /* Darker text for better contrast */
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.app-container.dark {
+  background: linear-gradient(to bottom right, #1a202c, #2d3748); /* Deeper, richer dark gradient */
+  color: #e2e8f0; /* Lighter text for dark mode */
+}
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #4a90e2, #6a5acd); /* More vibrant blue-purple gradient */
+  color: white;
+  padding: 1.2rem 2.5rem; /* Increased padding */
+  border-radius: 15px; /* More rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger, more diffused shadow */
+  margin-bottom: 2.5rem; /* Increased margin */
+  transition: all 0.3s ease;
+}
+
+.app-container.dark header {
+  background: linear-gradient(to right, #2c3e50, #4a6984); /* Darker, sophisticated header gradient */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  font-size: 2.2rem; /* Larger title */
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* === Toggle Buttons & Logout Button === */
+.toggle-btn {
+  background: linear-gradient(to right, #8e2de2, #4a00e0); /* Deep purple gradient */
+  border: none;
+  padding: 0.6rem 1.2rem; /* Slightly larger */
+  border-radius: 8px; /* More rounded */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn:hover {
+  background: linear-gradient(to right, #a742f5, #6a1ce0); /* Lighter hover state */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.app-container.dark .toggle-btn {
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* Warm, inviting dark mode toggle */
+  color: #333;
+}
+
+.app-container.dark .toggle-btn:hover {
+  background: linear-gradient(to right, #ff9a8b, #ffc3a0);
+}
+
+/* Logout Button Specifics */
+.toggle-btn[style*="background: rgb(220, 53, 69)"] { /* Target the logout button specifically if inline style persists */
+  background: linear-gradient(to right, #dc3545, #c82333) !important; /* Red gradient for logout */
+  color: white !important;
+}
+
+.toggle-btn[style*="background: rgb(220, 53, 69)"]:hover {
+  background: linear-gradient(to right, #e04a5a, #d03040) !important;
+}
+
+
+/* === Main Layout === */
+main {
+  max-width: 1100px; /* Slightly wider main content area */
+  margin: 0 auto;
+}
+
+/* === Upload Box === */
+.upload-box {
+  border: 2px dashed #999; /* Slightly darker dashed border */
+  padding: 3rem; /* More padding */
+  text-align: center;
+  border-radius: 15px; /* More rounded */
+  background: linear-gradient(to bottom right, #ffffff, #f0f4f8); /* Subtle gradient for light mode */
+  margin-bottom: 3rem; /* More margin */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.app-container.dark .upload-box {
+  background: linear-gradient(to bottom right, #2a303c, #3a404c); /* Darker gradient */
+  border-color: #555;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.upload-box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.app-container.dark .upload-box p {
+  color: #bbb;
+}
+
+.upload-box input[type="file"] {
+  display: block;
+  margin: 1.5rem auto 1rem; /* Centered and more spacing */
+  width: fit-content; /* Adjust width to content */
+  cursor: pointer;
+}
+
+.filename {
+  margin-top: 0.8rem;
+  font-style: italic;
+  font-weight: 500;
+  color: #007bff;
+}
+
+.app-container.dark .filename {
+  color: #00bfff;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 1.5rem;
+}
+
+.app-container.dark .note {
+  color: #999;
+}
+
+.upload-box button {
+  background: linear-gradient(to right, #28a745, #218838); /* Consistent green gradient */
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem; /* Larger button */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.upload-box button:hover {
+  background: linear-gradient(to right, #38d35e, #30b04a); /* Lighter green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.upload-box button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* === Result Section === */
+.result-section {
+  margin-top: 3rem;
+}
+
+.loading-text {
+  font-style: italic;
+  color: #666;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.app-container.dark .loading-text {
+  color: #ccc;
+}
+
+.clause-box {
+  background: linear-gradient(to bottom right, #ffffff, #f8f8f8); /* Subtle gradient for clauses */
+  padding: 1.8rem; /* More padding */
+  border-left: 8px solid #007bff; /* Thicker border */
+  border-radius: 12px; /* More rounded */
+  margin-bottom: 2rem; /* More margin */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.15); /* Stronger, more diffused shadow */
+  animation: fadeInUp 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clause-box:hover {
+  transform: translateY(-5px); /* More pronounced lift */
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.25);
+}
+
+.app-container.dark .clause-box {
+  background: linear-gradient(to bottom right, #2c3e50, #34495e); /* Darker gradient for clauses */
+  border-left: 8px solid #00bfff; /* Brighter border in dark mode */
+  box-shadow: 0 4px 15px rgba(0, 191, 255, 0.25);
+}
+
+.clause-box h3 {
+  font-size: 1.4rem;
+  color: #0056b3; /* Darker blue for heading */
+  margin-bottom: 0.8rem;
+}
+
+.app-container.dark .clause-box h3 {
+  color: #00bfff; /* Brighter blue for heading in dark mode */
+}
+
+.clause-box p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.clause-box ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  padding-left: 0;
+  margin-top: 0.8rem;
+}
+
+.clause-box ul strong {
+  display: block; /* Ensure strong tag is on its own line */
+  margin-bottom: 0.5rem;
+}
+
+/* === Auth Pages === */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* Adjust based on your header height */
+  padding: 1rem;
+  background: transparent; /* Ensure no extra background from wrapper */
+}
+
+/* The login-box is the container provided by App.js */
+.login-box, .register-box {
+  padding: 2.5rem; /* More padding */
+  border-radius: 15px; /* More rounded */
+  max-width: 400px; /* Slightly wider for better form layout */
+  width: 100%;
+  text-align: center;
+  /* --- LIGHT MODE: Light blue box as requested --- */
+  background: lightblue; /* Light blue background for the box in light mode */
+  color: #333; /* Dark text for light box in light mode */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow */
+  transition: all 0.3s ease;
+}
+
+/* This rule specifically applies when the app-container is in dark mode */
+.app-container.dark .login-box,
+.app-container.dark .register-box {
+  /* --- DARK MODE: Darkslategray box as per previous request --- */
+  background: darkslategray; /* Dark box in dark mode */
+  color: white; /* Light text for dark box in dark mode */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow in dark mode */
+}
+
+/* Styles for the actual form content (inputs, buttons) within auth-form-content */
+.auth-form-content input {
+  width: calc(100% - 20px); /* Adjust width as needed, accounting for padding */
+  padding: 12px; /* More padding for inputs */
+  margin-bottom: 1.2rem; /* More spacing */
+  border: 1px solid #ccc; /* Lighter border */
+  border-radius: 8px; /* More rounded */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Input styles for light mode (when the box is light blue) */
+.login-box input,
+.register-box input,
+.auth-form-content input { /* Targeting all inputs within auth forms */
+  background-color: #ffffff; /* Explicitly white background for inputs */
+  color: #333; /* Dark text for inputs */
+  border-color: #a0c4ff; /* A blueish border for inputs in light mode */
+}
+
+/* Input styles for dark mode (when the box is darkslategray) */
+.app-container.dark .auth-form-content input {
+  background-color: #4a5568; /* Darker background for inputs in dark mode */
+  color: #e2e8f0; /* Lighter text for inputs in dark mode */
+  border-color: #667eea; /* A purpleish border for inputs in dark mode */
+}
+
+.auth-form-content button {
+  background: linear-gradient(to right, #4CAF50, #45a049); /* Green gradient for buttons */
+  color: white;
+  padding: 1rem 2rem; /* Larger button */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.auth-form-content button:hover {
+  background: linear-gradient(to right, #38d35e, #30b04a); /* Lighter green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.app-container.dark .auth-form-content button {
+  background: linear-gradient(to right, #00b09b, #96c93d); /* Different gradient for dark mode buttons */
+}
+
+.app-container.dark .auth-form-content button:hover {
+  background: linear-gradient(to right, #96c93d, #00b09b);
+}
+
+/* Styles for the error message */
+.auth-form-content .error {
+  color: #ff6b6b; /* Red for errors */
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* Moved from Login.css to App.css as it's a global style */
+.App p span:hover {
+  color: #66ff66;
+  text-shadow: 0 0 3px #4caf50;
+}
+
+/* === How to Use Section === */
+.how-to-use {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: linear-gradient(to right, #e6e9f0, #f0f2f5);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.app-container.dark .how-to-use {
+  background: linear-gradient(to right, #3a404c, #4a5568);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.how-to-use h2 {
+  font-size: 1.8rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.app-container.dark .how-to-use h2 {
+  color: #00bfff;
+}
+
+.how-to-use ul {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.how-to-use li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  padding-left: 2rem;
+  position: relative;
+  color: #333;
+}
+
+.app-container.dark .how-to-use li {
+  color: #e2e8f0;
+}
+
+.how-to-use li:before {
+  content: '👉'; /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  color: #6a5acd; /* Accent color for bullet */
+  font-size: 1.2rem;
+}
+
+/* === Advantage Section === */
+.advantages {
+  margin-top: 4rem;
+  padding: 2rem 0; /* Add some vertical padding */
+}
+
+.advantages h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.app-container.dark .advantages h2 {
+  color: #00bfff;
+}
+
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.adv-box {
+  padding: 2rem; /* More padding */
+  border-radius: 15px; /* More rounded */
+  background: linear-gradient(to top left, #ffffff, #f3f4f6); /* Subtle gradient */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Stronger shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left; /* Align text left */
+}
+
+.adv-box:hover {
+  transform: translateY(-8px); /* More pronounced lift */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.app-container.dark .adv-box {
+  background: linear-gradient(to top left, #2c3e50, #34495e); /* Darker gradient */
+  border: 1px solid #4a5568;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.adv-box h4 {
+  font-size: 1.3rem;
+  color: #4a00e0; /* Accent color for headings */
+  margin-bottom: 0.8rem;
+}
+
+.app-container.dark .adv-box h4 {
+  color: #ff7e5f; /* Warm accent in dark mode */
+}
+
+.adv-box p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.app-container.dark .adv-box p {
+  color: #e2e8f0;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

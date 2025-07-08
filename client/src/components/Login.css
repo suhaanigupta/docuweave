@@ -1,0 +1,21 @@
+/* components/Login.css - This file now only contains styles for the form elements themselves */
+
+/* Styles for the form content (inputs, buttons, error messages) */
+.auth-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem; /* Adjust if needed, but App.js .login-box should handle overall spacing */
+}
+
+/* Error message styling */
+.auth-form-content .error {
+    color: #ff6b6b; /* Red for errors */
+    margin-bottom: 1rem;
+}
+
+/* NOTE: All .login-container, .login-box, and their direct child input/button styles
+   have been REMOVED from here. These are now handled by App.css for proper theming. */
+/* The general form input and button styles are now handled by App.css as well,
+   or can be defined here if you need more specific overrides for just these forms.
+   For now, App.css will be the single source of truth for these common elements. */
