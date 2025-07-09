@@ -1,5 +1,5 @@
 
-# 🧾 DocuWeave – AI-Powered Contract Analyzer
+# 🧾 Docuweave – AI-Powered Contract Analyzer
 
 DocuWeave is a smart contract analysis tool designed to help users — especially non-lawyers — understand legal documents effortlessly. It uses LLaMA-3 via Gemini API to extract, explain, and evaluate clauses from uploaded PDFs. Built with React and Express, it features Firebase-based user authentication and is fully deployed on Netlify and Render.
 - 🔗 **The deployed website**: [Link](https://docuweave.netlify.app)
